@@ -36,17 +36,13 @@ export default function Navigation() {
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "70px" }}>
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
-          <div style={{
-            width: "42px", height: "42px", borderRadius: "50%",
-            background: "linear-gradient(135deg, #E8637A, #D4A017)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontFamily: "'Playfair Display', serif", fontSize: "16px", fontWeight: 700, color: "white"
-          }}>YA</div>
-          <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", fontWeight: 700, color: "#1A1A1A", lineHeight: 1.1 }}>You Art</div>
-            <div style={{ fontSize: "10px", fontWeight: 500, color: "var(--rose)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Lac Rose</div>
-          </div>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo/youart-logo.svg"
+            alt="You Art Lac Rose"
+            style={{ height: "54px", width: "auto" }}
+          />
         </Link>
 
         {/* Desktop nav */}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100" role="img" aria-label="You Art Lac Rose">
+  <!-- Icon cluster: camel, pirogue, quad, wheel -->
+  <g transform="translate(0,0)">
+    <!-- Pink pirogue / boat shape (bottom) -->
+    <ellipse cx="50" cy="72" rx="38" ry="10" fill="#E8637A" opacity="0.92"/>
+    <!-- Yellow triangular sail -->
+    <polygon points="50,18 30,68 70,68" fill="#D4A017" opacity="0.90"/>
+    <!-- Green camel head (top-left) -->
+    <g fill="#1A6B3C">
+      <!-- Body/neck -->
+      <ellipse cx="24" cy="42" rx="12" ry="8" fill="#1A6B3C"/>
+      <!-- Head -->
+      <ellipse cx="18" cy="30" rx="9" ry="7" fill="#1A6B3C"/>
+      <!-- Snout -->
+      <ellipse cx="12" cy="33" rx="6" ry="4" fill="#2E8B57"/>
+      <!-- Hump -->
+      <ellipse cx="32" cy="36" rx="8" ry="6" fill="#1A6B3C"/>
+      <!-- Eye -->
+      <circle cx="16" cy="28" r="1.8" fill="white"/>
+      <circle cx="16" cy="28" r="1" fill="#1A1A1A"/>
+      <!-- Ear -->
+      <ellipse cx="23" cy="23" rx="3" ry="4" fill="#2E8B57"/>
+    </g>
+    <!-- Red quad / ATV (right side) -->
+    <g transform="translate(70,48)">
+      <!-- Body -->
+      <rect x="0" y="4" width="24" height="14" rx="3" fill="#D94040"/>
+      <!-- Front -->
+      <rect x="20" y="6" width="8" height="10" rx="2" fill="#B83232"/>
+      <!-- Seat/top -->
+      <rect x="2" y="0" width="16" height="6" rx="2" fill="#C03030"/>
+      <!-- Handlebars -->
+      <line x1="20" y1="2" x2="28" y2="2" stroke="#8B2020" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Front wheel -->
+      <circle cx="26" cy="20" r="6" fill="#1A1A1A"/>
+      <circle cx="26" cy="20" r="3" fill="#D4A017"/>
+      <circle cx="26" cy="20" r="1.2" fill="#1A1A1A"/>
+      <!-- Rear wheel -->
+      <circle cx="4" cy="20" r="7" fill="#1A1A1A"/>
+      <circle cx="4" cy="20" r="3.5" fill="#D4A017"/>
+      <circle cx="4" cy="20" r="1.4" fill="#1A1A1A"/>
+    </g>
+  </g>
+
+  <!-- Text: YOU ART -->
+  <text x="118" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#1A1A1A" letter-spacing="1">YOU ART</text>
+  <!-- Text: LAC ROSE -->
+  <text x="122" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="500" fill="#E8637A" letter-spacing="3">LAC ROSE</text>
+  <!-- Decorative line under LAC ROSE -->
+  <line x1="122" y1="76" x2="268" y2="76" stroke="#D4A017" stroke-width="1.5" opacity="0.6"/>
+</svg>

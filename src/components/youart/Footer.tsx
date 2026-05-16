@@ -9,8 +9,13 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "40px", marginBottom: "48px" }}>
           {/* Brand */}
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "22px", fontWeight: 700, marginBottom: "12px" }}>
-              You Art <span style={{ color: "var(--rose)" }}>Lac Rose</span>
+            <div style={{ marginBottom: "16px" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo/youart-logo-light.svg"
+                alt="You Art Lac Rose"
+                style={{ height: "54px", width: "auto" }}
+              />
             </div>
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: "20px" }}>
               Excursions quad, pirogue, chameau et cheval au Lac Rose du Sénégal. Note 4.8⭐/5.
