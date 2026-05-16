@@ -19,14 +19,14 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to Netlify
+      - name: Deploy to Netlify (build + deploy)
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: 4f3ef7d3-5f11-4604-8c6b-119829432258
-        run: npx netlify-cli deploy --dir=.next --prod --message="Deploy from GitHub Actions"
+        run: netlify deploy --build --prod
