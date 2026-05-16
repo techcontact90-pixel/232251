@@ -1,76 +1,97 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 
 const categories = [
-  {
-    id: "quad", label: "🏍️ Quad & Aventure", color: "#E8637A",
-    photos: [
-      { src: "/images/quad/quad-1.jpg", alt: "Quad plage Lac Rose" },
-      { src: "/images/quad/quad-2.jpg", alt: "Groupe quad Sénégal" },
-      { src: "/images/quad/quad-5.jpg", alt: "Excursion quad You Art" },
-      { src: "/images/quad/quad-8.jpg", alt: "Ballade quad Lac Rose" },
-    ],
-  },
-  {
-    id: "pirogue", label: "🚣 Pirogue & Lac Rose", color: "#1A6B3C",
-    photos: [
-      { src: "/images/pirogue/pirogue-1.jpg", alt: "Pirogues colorées Lac Rose" },
-      { src: "/images/pirogue/pirogue-2.jpg", alt: "Pirogue Sénégal" },
-      { src: "/images/pirogue/pirogue-8.jpg", alt: "Tour du Lac Rose pirogue" },
-      { src: "/images/pirogue/pirogue-4.jpg", alt: "Lac Rose excursion" },
-    ],
-  },
-  {
-    id: "cheval", label: "🐴 Cheval & Chameau", color: "#D4A017",
-    photos: [
-      { src: "/images/cheval/cheval-1.jpg", alt: "Cheval Lac Rose" },
-      { src: "/images/cheval/cheval-2.jpg", alt: "Balade cheval Sénégal" },
-      { src: "/images/cheval/cheval-3.jpg", alt: "Horse riding Sénégal" },
-      { src: "/images/cheval/jeux-1.jpg", alt: "Jeux You Art Lac Rose" },
-    ],
-  },
-  {
-    id: "ambiance", label: "🌅 Ambiance & Moments", color: "#7C3AED",
-    photos: [
-      { src: "/images/ambiance/site-1.jpg", alt: "You Art Lac Rose entrée" },
-      { src: "/images/ambiance/groupe-1.jpg", alt: "Groupe touristes Lac Rose" },
-      { src: "/images/ambiance/site-5.jpg", alt: "Ambiance You Art" },
-      { src: "/images/ambiance/site-6.jpg", alt: "Lac Rose Sénégal" },
-    ],
-  },
+  { key: "all", label: "Tout voir" },
+  { key: "quad", label: "Quad" },
+  { key: "pirogue", label: "Pirogue" },
+  { key: "cheval", label: "Cheval" },
+  { key: "ambiance", label: "Ambiance" },
+];
+
+const photos = [
+  { src: "/images/quad/quad-1.jpg", cat: "quad", alt: "Quad Lac Rose", h: 360 },
+  { src: "/images/pirogue/pirogue-1.jpg", cat: "pirogue", alt: "Pirogue Lac Rose", h: 240 },
+  { src: "/images/cheval/cheval-1.jpg", cat: "cheval", alt: "Cheval coucher de soleil", h: 220 },
+  { src: "/images/ambiance/banner.jpg", cat: "ambiance", alt: "Lac Rose panoramique", h: 300 },
+  { src: "/images/quad/quad-2.jpg", cat: "quad", alt: "Quad sur les dunes", h: 220 },
+  { src: "/images/pirogue/pirogue-3.jpg", cat: "pirogue", alt: "Pirogue colorée", h: 360 },
+  { src: "/images/cheval/cheval-2.jpg", cat: "cheval", alt: "Cheval plage", h: 220 },
+  { src: "/images/ambiance/site-1.jpg", cat: "ambiance", alt: "Site Lac Rose", h: 220 },
+  { src: "/images/quad/quad-4.jpg", cat: "quad", alt: "Quad dunes dorées", h: 260 },
+  { src: "/images/pirogue/pirogue-5.jpg", cat: "pirogue", alt: "Pirogue coucher", h: 220 },
+  { src: "/images/cheval/cheval-3.jpg", cat: "cheval", alt: "Balade cheval", h: 240 },
+  { src: "/images/ambiance/groupe-1.jpg", cat: "ambiance", alt: "Groupe Lac Rose", h: 220 },
+  { src: "/images/quad/quad-6.jpg", cat: "quad", alt: "Adrénaline quad", h: 220 },
+  { src: "/images/pirogue/pirogue-7.jpg", cat: "pirogue", alt: "Eaux roses", h: 220 },
+  { src: "/images/ambiance/site-3.jpg", cat: "ambiance", alt: "Paysage lac", h: 300 },
+  { src: "/images/quad/quad-8.jpg", cat: "quad", alt: "Quad liberté", h: 220 },
+  { src: "/images/pirogue/pirogue-8.jpg", cat: "pirogue", alt: "Pirogue soleil", h: 220 },
+  { src: "/images/ambiance/site-5.jpg", cat: "ambiance", alt: "Lac Rose soleil", h: 360 },
+  { src: "/images/cheval/cheval-4.jpg", cat: "cheval", alt: "Cheval liberté", h: 220 },
+  { src: "/images/ambiance/site-6.jpg", cat: "ambiance", alt: "Ambiance lac", h: 220 },
 ];
 
 export default function GalerieClient() {
+  const [active, setActive] = useState("all");
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  const filtered = active === "all" ? photos : photos.filter(p => p.cat === active);
+
   return (
     <>
-      <div style={{ paddingTop: "70px", background: "linear-gradient(135deg, #1A1A1A, #374151)", padding: "120px 24px 60px", textAlign: "center" }}>
-        <span style={{ fontSize: "12px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>Nos Souvenirs</span>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 700, color: "white", marginTop: "8px" }}>Galerie Photos</h1>
-        <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "16px", marginTop: "12px" }}>Quad · Pirogue · Cheval · Ambiance</p>
+      {/* Filter tabs */}
+      <div style={{ display: "flex", justifyContent: "center", gap: "8px", padding: "48px 24px 40px", flexWrap: "wrap" }}>
+        {categories.map(cat => (
+          <button key={cat.key} onClick={() => setActive(cat.key)}
+            style={{
+              padding: "10px 24px", fontSize: "12px", fontWeight: 600,
+              letterSpacing: "0.12em", textTransform: "uppercase",
+              background: active === cat.key ? "var(--coral)" : "transparent",
+              color: active === cat.key ? "white" : "var(--muted)",
+              border: `1.5px solid ${active === cat.key ? "var(--coral)" : "#E5E7EB"}`,
+              borderRadius: "100px", cursor: "pointer", transition: "all 0.25s ease",
+            }}
+          >{cat.label}</button>
+        ))}
       </div>
 
-      <style>{`
-        .gal-img { transition: transform 0.4s ease; }
-        .gal-img:hover { transform: scale(1.06); }
-      `}</style>
+      {/* Masonry grid */}
+      <div style={{ padding: "0 24px 80px", maxWidth: "1300px", margin: "0 auto" }}>
+        <div style={{ columns: "4 240px", columnGap: "12px" }}>
+          {filtered.map((photo, i) => (
+            <div key={`${photo.src}-${i}`}
+              onClick={() => setLightbox(photo.src)}
+              style={{ position: "relative", marginBottom: "12px", overflow: "hidden", borderRadius: "4px", cursor: "zoom-in", breakInside: "avoid", height: `${photo.h}px` }}
+              className="g-item"
+            >
+              <Image src={photo.src} alt={photo.alt} fill style={{ objectFit: "cover", transition: "transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)" }} sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" />
+              <div className="g-overlay" style={{ position: "absolute", inset: 0, background: "rgba(14,61,36,0)", display: "flex", alignItems: "center", justifyContent: "center", transition: "background 0.4s ease" }}>
+                <span className="g-plus" style={{ color: "white", fontSize: "28px", fontWeight: 300, opacity: 0, transform: "scale(0.5)", transition: "all 0.3s ease" }}>⊕</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {categories.map((cat) => (
-        <section key={cat.id} id={cat.id} style={{ padding: "64px 24px", borderBottom: "1px solid #f0f0f0" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "32px" }}>
-              <div style={{ width: "4px", height: "32px", background: cat.color, borderRadius: "2px" }} />
-              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 700 }}>{cat.label}</h2>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
-              {cat.photos.map((photo, i) => (
-                <div key={i} style={{ position: "relative", overflow: "hidden", borderRadius: "6px", aspectRatio: "4/3" }}>
-                  <Image className="gal-img" src={photo.src} alt={photo.alt} fill style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
-                </div>
-              ))}
-            </div>
+      {/* Lightbox */}
+      {lightbox && (
+        <div onClick={() => setLightbox(null)}
+          style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.95)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", cursor: "zoom-out" }}>
+          <button onClick={() => setLightbox(null)}
+            style={{ position: "absolute", top: "20px", right: "28px", background: "none", border: "none", color: "white", fontSize: "40px", cursor: "pointer", lineHeight: 1 }}>×</button>
+          <div style={{ position: "relative", width: "min(900px, 90vw)", height: "min(620px, 85vh)" }}>
+            <Image src={lightbox} alt="You Art Lac Rose" fill style={{ objectFit: "contain" }} sizes="90vw" />
           </div>
-        </section>
-      ))}
+        </div>
+      )}
+
+      <style>{`
+        .g-item:hover img { transform: scale(1.08) !important; }
+        .g-item:hover .g-overlay { background: rgba(14,61,36,0.42) !important; }
+        .g-item:hover .g-plus { opacity: 1 !important; transform: scale(1) !important; }
+      `}</style>
     </>
   );
 }
