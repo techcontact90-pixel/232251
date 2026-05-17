@@ -2,6 +2,36 @@
 import Link from "next/link";
 import { Phone, MapPin, Clock } from "lucide-react";
 
+function TikTokIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+    </svg>
+  );
+}
+function InstagramIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+function FacebookIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+  );
+}
+
+const SOCIALS = [
+  { href: "https://www.tiktok.com/@youartlacrose", label: "TikTok", icon: <TikTokIcon size={18} /> },
+  { href: "https://www.instagram.com/youartlacrose", label: "Instagram", icon: <InstagramIcon size={18} /> },
+  { href: "https://www.facebook.com/share/1AWNWXNyG1/", label: "Facebook", icon: <FacebookIcon size={18} /> },
+];
+
 export default function Footer() {
   return (
     <footer style={{ background: "var(--ink)", color: "white", padding: "72px 40px 0" }}>
@@ -19,6 +49,16 @@ export default function Footer() {
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#25D366", color: "white", padding: "11px 22px", borderRadius: "4px", fontSize: "13px", fontWeight: 600, textDecoration: "none" }}>
               WhatsApp
             </a>
+            {/* Social icons */}
+            <div style={{ display: "flex", gap: "12px", marginTop: "20px" }}>
+              {SOCIALS.map(s => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                  className="social-icon"
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "50%", background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.1)", textDecoration: "none", transition: "all 0.25s" }}>
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Nav */}
@@ -60,7 +100,15 @@ export default function Footer() {
         {/* Bottom */}
         <div style={{ padding: "24px 0", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
           <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.25)" }}>© 2025 You Art Lac Rose. Tous droits réservés.</span>
-          <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.25)" }}>youartsquads.sn · Lac Retba, Sénégal</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            {SOCIALS.map(s => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                className="social-icon-sm"
+                style={{ color: "rgba(255,255,255,0.25)", transition: "color 0.2s", textDecoration: "none" }}>
+                {s.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -71,6 +119,8 @@ export default function Footer() {
         @media (max-width: 480px) {
           .footer-grid { grid-template-columns: 1fr !important; }
         }
+        .social-icon:hover { background: var(--coral) !important; color: white !important; border-color: var(--coral) !important; transform: translateY(-2px); }
+        .social-icon-sm:hover { color: var(--coral) !important; }
       `}</style>
     </footer>
   );
