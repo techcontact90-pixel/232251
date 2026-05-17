@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/youart/Navigation";
 import Footer from "@/components/youart/Footer";
 import ChatBot from "@/components/youart/ChatBot";
+import MobileNav from "@/components/youart/MobileNav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://youartsquads.netlify.app"),
@@ -30,9 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body>
         <Navigation />
-        <main>{children}</main>
+        <main style={{ paddingBottom: "0" }} className="main-content">{children}</main>
         <Footer />
         <ChatBot />
+        <MobileNav />
       </body>
     </html>
   );

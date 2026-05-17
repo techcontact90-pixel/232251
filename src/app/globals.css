@@ -138,9 +138,13 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
+/* Mobile bottom nav spacing */
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
+  body { padding-bottom: 64px; }
+  .mobile-bottom-nav { display: flex !important; }
 }
 @media (min-width: 769px) {
   .mobile-only { display: none !important; }
+  .mobile-bottom-nav { display: none !important; }
 }

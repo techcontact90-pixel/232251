@@ -117,24 +117,25 @@ export default function ChatBot() {
 
   return (
     <>
-      {/* Floating button */}
+      {/* Floating button — above mobile nav */}
       <button
         onClick={() => setOpen(o => !o)}
         aria-label="Ouvrir le chat"
-        style={{ position: "fixed", bottom: "28px", right: "28px", zIndex: 9000, width: "60px", height: "60px", borderRadius: "50%", background: "#25D366", border: "none", cursor: "pointer", boxShadow: "0 8px 32px rgba(37,211,102,0.45)", display: "flex", alignItems: "center", justifyContent: "center", transition: "transform 0.3s, box-shadow 0.3s" }}
-        onMouseEnter={e => { (e.currentTarget).style.transform = "scale(1.1)"; }}
+        className="chat-fab"
+        style={{ position: "fixed", bottom: "80px", right: "16px", zIndex: 9000, width: "52px", height: "52px", borderRadius: "50%", background: "#25D366", border: "none", cursor: "pointer", boxShadow: "0 8px 28px rgba(37,211,102,0.5)", display: "flex", alignItems: "center", justifyContent: "center", transition: "transform 0.3s" }}
+        onMouseEnter={e => { (e.currentTarget).style.transform = "scale(1.08)"; }}
         onMouseLeave={e => { (e.currentTarget).style.transform = "scale(1)"; }}
       >
-        {open ? <X size={22} color="white" /> : WA_ICON}
+        {open ? <X size={20} color="white" /> : WA_ICON}
         {!open && unread > 0 && (
-          <span style={{ position: "absolute", top: "-4px", right: "-4px", width: "20px", height: "20px", background: "var(--coral)", borderRadius: "50%", color: "white", fontSize: "11px", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid white" }}>{unread}</span>
+          <span style={{ position: "absolute", top: "-4px", right: "-4px", width: "18px", height: "18px", background: "var(--coral)", borderRadius: "50%", color: "white", fontSize: "10px", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid white" }}>{unread}</span>
         )}
       </button>
 
       {/* Chat panel */}
       {open && (
-        <div style={{ position: "fixed", bottom: "100px", right: "28px", zIndex: 9000, width: "360px", maxHeight: "530px", background: "white", borderRadius: "16px", boxShadow: "0 24px 80px rgba(0,0,0,0.2)", display: "flex", flexDirection: "column", overflow: "hidden", animation: "chatSlide 0.35s cubic-bezier(0.16,1,0.3,1)" }}
-          className="chat-panel"
+        <div className="chat-panel"
+          style={{ position: "fixed", bottom: "140px", right: "16px", zIndex: 9000, width: "340px", maxHeight: "460px", background: "white", borderRadius: "16px", boxShadow: "0 24px 80px rgba(0,0,0,0.22)", display: "flex", flexDirection: "column", overflow: "hidden", animation: "chatSlide 0.35s cubic-bezier(0.16,1,0.3,1)" }}
         >
           {/* Header */}
           <div style={{ background: "var(--forest)", padding: "18px 20px", display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
@@ -201,8 +202,22 @@ export default function ChatBot() {
           from { opacity: 0; transform: translateY(16px) scale(0.96); }
           to { opacity: 1; transform: none; }
         }
-        @media (max-width: 480px) {
-          .chat-panel { width: calc(100vw - 24px) !important; right: 12px !important; }
+        @media (max-width: 768px) {
+          .chat-panel {
+            width: calc(100vw - 24px) !important;
+            right: 12px !important;
+            left: 12px !important;
+            bottom: 148px !important;
+            max-height: calc(100dvh - 200px) !important;
+          }
+          .chat-fab {
+            bottom: 80px !important;
+            right: 16px !important;
+          }
+        }
+        @media (min-width: 769px) {
+          .chat-fab { bottom: 28px !important; right: 28px !important; width: 60px !important; height: 60px !important; }
+          .chat-panel { bottom: 104px !important; right: 28px !important; width: 360px !important; max-height: 530px !important; }
         }
       `}</style>
     </>

@@ -82,8 +82,8 @@ export default function HomePage() {
       </section>
 
       {/* ── INTRO EDITORIAL ── */}
-      <section style={{ background: "var(--sand)", padding: "100px 40px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }}>
+      <section style={{ background: "var(--sand)", padding: "80px 24px" }}>
+        <div className="editorial-grid" style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
           <div>
             <span style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--coral)" }}>Notre histoire</span>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 400, lineHeight: 1.05, margin: "12px 0 28px", fontStyle: "italic" }}>
@@ -97,7 +97,7 @@ export default function HomePage() {
             </p>
             <Link href="/activites" className="btn-forest">Explorer les activités</Link>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", height: "480px" }}>
+          <div className="editorial-mosaic" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", height: "480px" }}>
             <div style={{ position: "relative", borderRadius: "4px", overflow: "hidden", gridRow: "span 2" }}>
               <Image src="/images/pirogue/pirogue-1.jpg" alt="Pirogue Lac Rose" fill style={{ objectFit: "cover" }} sizes="300px" />
             </div>
@@ -218,14 +218,31 @@ export default function HomePage() {
         .act-panel:hover img { transform: scale(1.08) !important; }
         .act-panel:hover .act-panel-overlay { background: linear-gradient(to top, rgba(14,61,36,0.75) 0%, rgba(14,61,36,0.2) 50%, transparent 100%) !important; }
         .strip-item:hover img { transform: scale(1.07) !important; }
+
+        /* ── Mobile fixes ── */
+        @media (max-width: 900px) {
+          .editorial-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .editorial-mosaic { height: 280px !important; }
+        }
         @media (max-width: 768px) {
-          section[style*="gridTemplateColumns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+          /* Padding for desktop nav links */
+          section[style*="100px 40px"] { padding: 64px 20px !important; }
+          /* Activity strip: 2x2 on tablet */
           .act-panel { flex: none !important; width: 50% !important; }
-          section[style*="height: clamp(320px"] { flex-wrap: wrap !important; height: auto !important; }
+          section[style*="clamp(320px"] { flex-wrap: wrap !important; height: auto !important; }
+          /* Stats band */
+          div[style*="var(--forest)"] > div[style*="justify-content: space-around"] { gap: 12px !important; }
         }
         @media (max-width: 480px) {
-          .act-panel { width: 100% !important; height: 260px !important; }
-          div[style*="gridTemplateColumns: repeat(5, 1fr)"] { grid-template-columns: repeat(3, 1fr) !important; height: 180px !important; }
+          /* Activity panels: full width on phone */
+          .act-panel { width: 100% !important; height: 220px !important; }
+          /* Gallery strip: 3 cols */
+          div[style*="repeat(5, 1fr)"] { grid-template-columns: repeat(3, 1fr) !important; height: 160px !important; }
+          /* Mosaic: single tall image */
+          .editorial-mosaic { display: block !important; height: 220px !important; }
+          .editorial-mosaic > div:not(:first-child) { display: none !important; }
+          /* Packs: single column */
+          div[style*="repeat(auto-fit, minmax(280px"] { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>
