@@ -28,8 +28,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #050505;
-  color: #F0EDE8;
+  background: #fff;
+  color: var(--ink);
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -41,7 +41,7 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
 ::selection { background: var(--coral); color: white; }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0C0C0C; }
+::-webkit-scrollbar-track { background: var(--sand); }
 ::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 2px; }
 
 /* ── Buttons ── */

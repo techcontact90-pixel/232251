@@ -62,9 +62,9 @@ export default function Navigation() {
   return (
     <header style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-      background: transparent ? "transparent" : "rgba(8,8,8,0.92)",
-      backdropFilter: transparent ? "none" : "blur(20px)",
-      borderBottom: transparent ? "none" : "1px solid rgba(255,255,255,0.06)",
+      background: transparent ? "transparent" : "rgba(255,255,255,0.97)",
+      backdropFilter: transparent ? "none" : "blur(16px)",
+      borderBottom: transparent ? "none" : "1px solid rgba(0,0,0,0.06)",
       transition: "all 0.4s cubic-bezier(0.16,1,0.3,1)",
       boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.07)" : "none",
     }}>
@@ -90,12 +90,12 @@ export default function Navigation() {
                 fontWeight: 500,
                 letterSpacing: "0.04em",
                 textDecoration: "none",
-                color: transparent ? "rgba(255,255,255,0.75)" : (pathname === l.href ? "var(--coral)" : "rgba(255,255,255,0.65)"),
+                color: transparent ? "rgba(255,255,255,0.85)" : (pathname === l.href ? "var(--coral)" : "#374151"),
                 borderBottom: pathname === l.href && !transparent ? "2px solid var(--coral)" : "2px solid transparent",
                 transition: "all 0.2s",
               }}
-              onMouseEnter={e => { (e.currentTarget).style.color = "var(--coral)"; }}
-              onMouseLeave={e => { (e.currentTarget).style.color = transparent ? "rgba(255,255,255,0.75)" : (pathname === l.href ? "var(--coral)" : "rgba(255,255,255,0.65)"); }}
+              onMouseEnter={e => { (e.currentTarget).style.color = transparent ? "white" : "var(--coral)"; }}
+              onMouseLeave={e => { (e.currentTarget).style.color = transparent ? "rgba(255,255,255,0.85)" : (pathname === l.href ? "var(--coral)" : "#374151"); }}
             >{l.label}</Link>
           ))}
 
@@ -127,31 +127,31 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {open && (
-        <div style={{ background: "rgba(8,8,8,0.98)", backdropFilter: "blur(20px)", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "16px 24px 28px" }}>
+        <div style={{ background: "white", borderTop: "1px solid #f0f0f0", padding: "16px 24px 28px" }}>
           {links.map(l => (
             <Link key={l.href} href={l.href} style={{
               display: "block", padding: "15px 0", fontSize: "17px", fontWeight: 500, textDecoration: "none",
-              color: pathname === l.href ? "var(--coral)" : "rgba(255,255,255,0.7)", borderBottom: "1px solid rgba(255,255,255,0.05)",
+              color: pathname === l.href ? "var(--coral)" : "var(--ink)", borderBottom: "1px solid #f5f5f5",
               fontFamily: "'Cormorant Garamond', serif",
             }}>{l.label}</Link>
           ))}
           <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer" style={{
             display: "flex", alignItems: "center", gap: "8px", marginTop: "20px", background: "#25D366", color: "white",
-            padding: "14px 20px", borderRadius: "2px", fontSize: "13px", fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
+            padding: "14px 20px", borderRadius: "4px", fontSize: "14px", fontWeight: 600, textDecoration: "none",
           }}>
             WhatsApp — Réserver
           </a>
           <a href="tel:+221773865345" style={{
             display: "flex", alignItems: "center", gap: "8px", marginTop: "10px", background: "var(--coral)", color: "white",
-            padding: "14px 20px", borderRadius: "2px", fontSize: "13px", fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
+            padding: "14px 20px", borderRadius: "4px", fontSize: "14px", fontWeight: 600, textDecoration: "none",
           }}>
             <Phone size={15} /> +221 77 386 53 45
           </a>
           {/* Social icons mobile menu */}
-          <div style={{ display: "flex", gap: "12px", marginTop: "20px", paddingTop: "16px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+          <div style={{ display: "flex", gap: "12px", marginTop: "20px", paddingTop: "16px", borderTop: "1px solid #f5f5f5" }}>
             {SOCIALS.map(s => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "42px", height: "42px", borderRadius: "50%", background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.55)", textDecoration: "none", border: "1px solid rgba(255,255,255,0.08)" }}>
+                style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "42px", height: "42px", borderRadius: "50%", background: "#f5f5f5", color: "#374151", textDecoration: "none" }}>
                 {s.icon}
               </a>
             ))}
