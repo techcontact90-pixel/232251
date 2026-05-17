@@ -36,7 +36,7 @@ export default function ContactPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "28px", marginBottom: "48px" }}>
               {[
                 { icon: <Phone size={18} />, color: "var(--coral)", titre: "Téléphone & WhatsApp", contenu: "+221 77 386 53 45", href: "tel:+221773865345" },
-                { icon: <MapPin size={18} />, color: "var(--forest)", titre: "Localisation", contenu: "Lac Rose (Lac Retba) · À 35 km de Dakar", href: "https://maps.google.com/?q=Lac+Rose+Senegal" },
+                { icon: <MapPin size={18} />, color: "var(--forest)", titre: "Localisation", contenu: "Lac Rose (Lac Retba) · À 35 km de Dakar", href: "https://maps.app.goo.gl/dGjff68Wogq2pjwN6" },
                 { icon: <Clock size={18} />, color: "var(--gold)", titre: "Horaires d'ouverture", contenu: "Lundi – Dimanche · 9h00 – 23h00" },
               ].map(({ icon, color, titre, contenu, href }) => (
                 <div key={titre} style={{ display: "flex", gap: "18px", alignItems: "flex-start" }}>
@@ -82,9 +82,9 @@ export default function ContactPage() {
 
           {/* Map */}
           <div>
-            <div style={{ borderRadius: "8px", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.1)", height: "460px", marginBottom: "16px" }}>
+            <div style={{ borderRadius: "8px", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.1)", height: "460px", marginBottom: "16px", position: "relative" }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5!2d-17.2333!3d14.8333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10b4d0000000%3A0x0!2sLac%20Rose%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.123!2d-17.233!3d14.833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10dca0b9f2bed%3A0x6ba78b461b0d3e6f!2sLac%20Rose%20(Lac%20Retba)!5e0!3m2!1sfr!2ssn!4v1700000000000!5m2!1sfr!2ssn"
                 width="100%"
                 height="460"
                 style={{ border: "none" }}
@@ -94,7 +94,15 @@ export default function ContactPage() {
                 title="You Art Lac Rose - Localisation Google Maps"
               />
             </div>
-            <p style={{ fontSize: "13px", color: "var(--muted)", textAlign: "center" }}>Lac Rose (Lac Retba), Sénégal · 35 km nord de Dakar</p>
+            <a
+              href="https://maps.app.goo.gl/dGjff68Wogq2pjwN6"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", background: "var(--forest)", color: "white", padding: "15px 24px", borderRadius: "4px", fontSize: "13px", fontWeight: 600, textDecoration: "none", letterSpacing: "0.04em", transition: "background 0.2s" }}
+              className="btn-map"
+            >
+              <MapPin size={15} /> Ouvrir dans Google Maps
+            </a>
           </div>
         </div>
       </section>
@@ -103,6 +111,7 @@ export default function ContactPage() {
         @media (max-width: 900px) {
           .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
         }
+        .btn-map:hover { background: var(--forest-mid) !important; }
       `}</style>
     </>
   );
