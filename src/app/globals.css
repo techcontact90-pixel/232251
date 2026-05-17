@@ -12,6 +12,11 @@
   --sand: #FAF3E8;
   --ink: #0D0D0D;
   --muted: #6B7280;
+  /* dark theme */
+  --dark-bg: #050505;
+  --dark-surface: #0C0C0C;
+  --dark-surface-2: #121212;
+  --dark-border: rgba(255,255,255,0.06);
   /* compat aliases */
   --rose: #E8637A;
   --vert: #1A6B3C;
@@ -23,8 +28,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #fff;
-  color: var(--ink);
+  background: #050505;
+  color: #F0EDE8;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -36,7 +41,7 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
 ::selection { background: var(--coral); color: white; }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-track { background: #0C0C0C; }
 ::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 2px; }
 
 /* ── Buttons ── */
@@ -45,9 +50,9 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
   color: white;
   padding: 15px 36px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
@@ -59,28 +64,30 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
 .btn-coral:hover {
   background: var(--coral-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(232,99,122,0.35);
+  box-shadow: 0 10px 28px rgba(232,99,122,0.4);
 }
 
 .btn-ghost-white {
   background: transparent;
-  color: white;
+  color: rgba(255,255,255,0.75);
   padding: 15px 36px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
-  border: 1.5px solid rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.18);
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 2px;
+  backdrop-filter: blur(8px);
 }
 .btn-ghost-white:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: white;
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.45);
+  color: white;
 }
 
 .btn-forest {
@@ -88,9 +95,9 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
   color: white;
   padding: 15px 36px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
@@ -105,10 +112,10 @@ h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
 }
 
 /* compat */
-.btn-primary { background: var(--coral); color: white; padding: 14px 32px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; cursor: pointer; transition: all 0.3s ease; border-radius: 2px; }
-.btn-primary:hover { background: var(--coral-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,99,122,0.3); }
-.btn-outline { background: transparent; color: var(--forest); padding: 14px 32px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; border: 1.5px solid var(--forest); cursor: pointer; transition: all 0.3s ease; border-radius: 2px; }
-.btn-outline:hover { background: var(--forest); color: white; }
+.btn-primary { background: var(--coral); color: white; padding: 14px 32px; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; cursor: pointer; transition: all 0.3s ease; border-radius: 2px; }
+.btn-primary:hover { background: var(--coral-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,99,122,0.35); }
+.btn-outline { background: transparent; color: rgba(255,255,255,0.75); padding: 14px 32px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-block; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s ease; border-radius: 2px; }
+.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.4); color: white; }
 
 /* ── Animations ── */
 @keyframes fadeUp {
