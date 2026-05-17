@@ -46,8 +46,6 @@ const PHOTOS: Record<string, { src: string; alt: string }[]> = {
     { src: "/images/ambiance/site-3.jpg", alt: "Paysage Lac Rose" },
     { src: "/images/ambiance/site-4.jpg", alt: "Lac Rose nature" },
     { src: "/images/ambiance/site-5.jpg", alt: "Lac Rose coucher" },
-    { src: "/images/ambiance/site-6.jpg", alt: "Lac Rose couleurs" },
-    { src: "/images/ambiance/groupe-1.jpg", alt: "Groupe Lac Rose" },
   ],
 };
 
