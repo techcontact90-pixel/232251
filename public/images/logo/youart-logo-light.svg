@@ -1,51 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100" role="img" aria-label="You Art Lac Rose">
-  <!-- Icon cluster: camel, pirogue, quad, wheel -->
-  <g transform="translate(0,0)">
-    <!-- Pink pirogue / boat shape (bottom) -->
-    <ellipse cx="50" cy="72" rx="38" ry="10" fill="#F5A0B0" opacity="0.92"/>
-    <!-- Yellow triangular sail -->
-    <polygon points="50,18 30,68 70,68" fill="#D4A017" opacity="0.90"/>
-    <!-- Green camel head (top-left) -->
-    <g fill="#2E8B57">
-      <!-- Body/neck -->
-      <ellipse cx="24" cy="42" rx="12" ry="8" fill="#2E8B57"/>
-      <!-- Head -->
-      <ellipse cx="18" cy="30" rx="9" ry="7" fill="#2E8B57"/>
-      <!-- Snout -->
-      <ellipse cx="12" cy="33" rx="6" ry="4" fill="#4AA870"/>
-      <!-- Hump -->
-      <ellipse cx="32" cy="36" rx="8" ry="6" fill="#2E8B57"/>
-      <!-- Eye -->
-      <circle cx="16" cy="28" r="1.8" fill="white"/>
-      <circle cx="16" cy="28" r="1" fill="#1A1A1A"/>
-      <!-- Ear -->
-      <ellipse cx="23" cy="23" rx="3" ry="4" fill="#4AA870"/>
-    </g>
-    <!-- Red quad / ATV (right side) -->
-    <g transform="translate(70,48)">
-      <!-- Body -->
-      <rect x="0" y="4" width="24" height="14" rx="3" fill="#E85555"/>
-      <!-- Front -->
-      <rect x="20" y="6" width="8" height="10" rx="2" fill="#D04040"/>
-      <!-- Seat/top -->
-      <rect x="2" y="0" width="16" height="6" rx="2" fill="#C84545"/>
-      <!-- Handlebars -->
-      <line x1="20" y1="2" x2="28" y2="2" stroke="#A83030" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Front wheel -->
-      <circle cx="26" cy="20" r="6" fill="#333"/>
-      <circle cx="26" cy="20" r="3" fill="#D4A017"/>
-      <circle cx="26" cy="20" r="1.2" fill="#333"/>
-      <!-- Rear wheel -->
-      <circle cx="4" cy="20" r="7" fill="#333"/>
-      <circle cx="4" cy="20" r="3.5" fill="#D4A017"/>
-      <circle cx="4" cy="20" r="1.4" fill="#333"/>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="You Art Lac Rose">
 
-  <!-- Text: YOU ART (white on dark bg) -->
-  <text x="118" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="white" letter-spacing="1">YOU ART</text>
-  <!-- Text: LAC ROSE -->
-  <text x="122" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="500" fill="#F5A0B0" letter-spacing="3">LAC ROSE</text>
-  <!-- Decorative line under LAC ROSE -->
-  <line x1="122" y1="76" x2="268" y2="76" stroke="#D4A017" stroke-width="1.5" opacity="0.6"/>
+  <!-- ── PIROGUE ── -->
+  <path d="M 28 118 Q 110 140 192 118 L 185 128 Q 110 152 35 128 Z" fill="#E8637A"/>
+
+  <!-- ── YELLOW SAIL ── -->
+  <polygon points="108,22 74,118 142,118" fill="#F5C200"/>
+
+  <!-- ── GREEN CAMEL ── -->
+  <path d="M 44 108 C 38 90 34 72 42 56 C 46 48 52 44 54 50 C 56 56 52 64 50 76 C 48 88 52 100 56 108 Z" fill="#4CAF50"/>
+  <ellipse cx="44" cy="50" rx="16" ry="13" fill="#4CAF50"/>
+  <ellipse cx="30" cy="56" rx="10" ry="7" fill="#66BB6A"/>
+  <ellipse cx="22" cy="57" rx="5" ry="3.5" fill="#4CAF50"/>
+  <circle cx="40" cy="45" r="3" fill="white"/>
+  <circle cx="40" cy="45" r="1.6" fill="#1A1A1A"/>
+  <ellipse cx="54" cy="40" rx="5" ry="7" fill="#66BB6A" transform="rotate(-15 54 40)"/>
+  <ellipse cx="58" cy="76" rx="10" ry="7" fill="#4CAF50"/>
+
+  <!-- ── RED QUAD ── -->
+  <rect x="118" y="72" width="52" height="32" rx="5" fill="#EF5350"/>
+  <rect x="162" y="76" width="16" height="24" rx="4" fill="#E53935"/>
+  <rect x="122" y="64" width="36" height="14" rx="4" fill="#E57373"/>
+  <path d="M 162 68 L 172 58 M 172 58 L 178 58" stroke="#B71C1C" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="130" cy="108" r="14" fill="rgba(0,0,0,0.5)"/>
+  <circle cx="130" cy="108" r="9" fill="#F5C200"/>
+  <circle cx="130" cy="108" r="4" fill="rgba(0,0,0,0.6)"/>
+  <circle cx="170" cy="108" r="12" fill="rgba(0,0,0,0.5)"/>
+  <circle cx="170" cy="108" r="7.5" fill="#F5C200"/>
+  <circle cx="170" cy="108" r="3" fill="rgba(0,0,0,0.6)"/>
+
+  <!-- ── TEXT white ── -->
+  <text x="110" y="164" text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-size="34" font-weight="900" fill="white" letter-spacing="1.5">YOU ART</text>
+  <text x="110" y="187" text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-size="19" font-weight="900" fill="rgba(255,255,255,0.85)" letter-spacing="5">LAC ROSE</text>
 </svg>
