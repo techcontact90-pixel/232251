@@ -149,7 +149,7 @@ export default function ReservationPage() {
                 { icon: "✓", text: "Réponse sous 2 heures" },
                 { icon: "✓", text: "Paiement sur place uniquement" },
                 { icon: "✓", text: "Annulation gratuite 24h avant" },
-                { icon: "✓", text: "Ouvert 7j/7 — 9h à 19h" },
+                { icon: "✓", text: "Ouvert 7j/7 — 9h à 23h" },
               ].map(item => (
                 <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <Check size={16} color="var(--forest-mid)" />

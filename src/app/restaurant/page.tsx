@@ -24,7 +24,7 @@ export default function RestaurantPage() {
           <div style={{ display: "flex", gap: "32px", marginTop: "24px", flexWrap: "wrap", justifyContent: "center" }}>
             {[
               { icon: <MapPin size={13} />, text: "Face au Lac Rose" },
-              { icon: <Clock size={13} />, text: "9h – 19h · 7j/7" },
+              { icon: <Clock size={13} />, text: "9h – 23h · 7j/7" },
             ].map(item => (
               <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "7px", color: "rgba(255,255,255,0.6)", fontSize: "12px", letterSpacing: "0.06em" }}>
                 <span style={{ color: "#F5A0B0" }}>{item.icon}</span>{item.text}

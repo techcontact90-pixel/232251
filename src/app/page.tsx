@@ -17,7 +17,7 @@ const jsonLd = {
   telephone: "+221773865345",
   address: { "@type": "PostalAddress", addressLocality: "Lac Rose", addressCountry: "SN" },
   aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", reviewCount: "53" },
-  openingHours: "Mo-Su 09:00-19:00",
+  openingHours: "Mo-Su 09:00-23:00",
 };
 
 const activities = [
@@ -54,7 +54,7 @@ export default function HomePage() {
             { val: "4.8 ★", label: "Note Google" },
             { val: "53", label: "Avis clients" },
             { val: "4", label: "Activités" },
-            { val: "7j/7", label: "9h – 19h" },
+            { val: "7j/7", label: "9h – 23h" },
           ].map(s => (
             <div key={s.label} style={{ textAlign: "center" }}>
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 700, color: "#F5A0B0", lineHeight: 1 }}>{s.val}</div>
@@ -190,7 +190,7 @@ export default function HomePage() {
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(34px, 5.5vw, 68px)", fontWeight: 300, color: "white", margin: "12px 0 20px", fontStyle: "italic", lineHeight: 1.05 }}>
             Votre aventure<br /><strong style={{ fontStyle: "normal", fontWeight: 700 }}>commence ici</strong>
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.7, marginBottom: "40px" }}>Notre équipe vous accueille 7j/7 de 9h à 19h au bord du Lac Rose.</p>
+          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.7, marginBottom: "40px" }}>Notre équipe vous accueille 7j/7 de 9h à 23h au bord du Lac Rose.</p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/reservation" className="btn-coral">Réserver en ligne</Link>
             <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer" className="btn-ghost-white" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
@@ -204,7 +204,7 @@ export default function HomePage() {
       <div style={{ background: "var(--ink)", padding: "20px 40px", display: "flex", justifyContent: "center", gap: "40px", flexWrap: "wrap" }}>
         {[
           { icon: <MapPin size={14} />, text: "Lac Rose, Sénégal" },
-          { icon: <Clock size={14} />, text: "Ouvert 9h – 19h, 7j/7" },
+          { icon: <Clock size={14} />, text: "Ouvert 9h – 23h, 7j/7" },
           { icon: <Phone size={14} />, text: "+221 77 386 53 45" },
         ].map(({ icon, text }) => (
           <div key={text} style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.5)", fontSize: "13px" }}>

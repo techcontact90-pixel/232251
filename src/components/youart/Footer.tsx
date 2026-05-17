@@ -87,7 +87,7 @@ export default function Footer() {
             {[
               { icon: <Phone size={13} />, text: "+221 77 386 53 45", href: "tel:+221773865345" },
               { icon: <MapPin size={13} />, text: "Lac Rose, Sénégal" },
-              { icon: <Clock size={13} />, text: "9h00 – 19h00, 7j/7" },
+              { icon: <Clock size={13} />, text: "9h00 – 23h00, 7j/7" },
             ].map(({ icon, text, href }) => (
               <div key={text} style={{ display: "flex", alignItems: "center", gap: "10px", color: "rgba(255,255,255,0.55)", fontSize: "14px", marginBottom: "14px" }}>
                 <span style={{ color: "var(--coral)", flexShrink: 0 }}>{icon}</span>

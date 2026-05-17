@@ -4,7 +4,7 @@ import { Phone, MapPin, Clock, Star } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact & Localisation - You Art Lac Rose",
-  description: "Contactez You Art Lac Rose : +221 77 386 53 45. Situé au Lac Rose, Sénégal. Ouvert 7j/7 de 9h à 19h. Réservations WhatsApp.",
+  description: "Contactez You Art Lac Rose : +221 77 386 53 45. Situé au Lac Rose, Sénégal. Ouvert 7j/7 de 9h à 23h. Réservations WhatsApp.",
 };
 
 export default function ContactPage() {
@@ -37,7 +37,7 @@ export default function ContactPage() {
               {[
                 { icon: <Phone size={18} />, color: "var(--coral)", titre: "Téléphone & WhatsApp", contenu: "+221 77 386 53 45", href: "tel:+221773865345" },
                 { icon: <MapPin size={18} />, color: "var(--forest)", titre: "Localisation", contenu: "Lac Rose (Lac Retba) · À 35 km de Dakar", href: "https://maps.google.com/?q=Lac+Rose+Senegal" },
-                { icon: <Clock size={18} />, color: "var(--gold)", titre: "Horaires d'ouverture", contenu: "Lundi – Dimanche · 9h00 – 19h00" },
+                { icon: <Clock size={18} />, color: "var(--gold)", titre: "Horaires d'ouverture", contenu: "Lundi – Dimanche · 9h00 – 23h00" },
               ].map(({ icon, color, titre, contenu, href }) => (
                 <div key={titre} style={{ display: "flex", gap: "18px", alignItems: "flex-start" }}>
                   <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "white", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 12px rgba(0,0,0,0.06)", color }}>
