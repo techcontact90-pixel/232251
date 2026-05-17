@@ -13,11 +13,11 @@ export default function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo/youart-logo-light.svg" alt="You Art Lac Rose" style={{ height: "52px", width: "auto", marginBottom: "20px" }} />
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: 1.8, marginBottom: "28px", maxWidth: "280px" }}>
-              Excursions quad, pirogue, chameau et cheval au cœur du Lac Rose — l'une des merveilles naturelles du Sénégal. Note 4.8⭐ / 5.
+              Excursions quad, pirogue, chameau et cheval au cœur du Lac Rose — l'une des merveilles naturelles du Sénégal. Note 4.8 / 5 sur Google.
             </p>
             <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#25D366", color: "white", padding: "11px 22px", borderRadius: "4px", fontSize: "13px", fontWeight: 600, textDecoration: "none" }}>
-              📱 WhatsApp
+              WhatsApp
             </a>
           </div>
 

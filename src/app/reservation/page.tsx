@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Check } from "lucide-react";
+import ReservationForm from "@/components/youart/ReservationForm";
 
 export const metadata: Metadata = {
   title: "Réservation & Tarifs",
@@ -130,28 +131,54 @@ export default function ReservationPage() {
         </div>
       </section>
 
-      {/* How to book */}
-      <section style={{ background: "var(--forest)", padding: "80px 40px" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 700, color: "white", marginBottom: "16px" }}>Comment réserver ?</h2>
-          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.8, marginBottom: "48px" }}>
-            Rien de plus simple — contactez-nous par WhatsApp ou téléphone. Notre équipe vous répond en moins de 2 heures.
-          </p>
-          <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer"
-              style={{ background: "#25D366", color: "white", padding: "16px 36px", fontSize: "14px", fontWeight: 600, textDecoration: "none", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "10px" }}>
-              📱 Réserver sur WhatsApp
-            </a>
-            <a href="tel:+221773865345"
-              style={{ background: "rgba(255,255,255,0.08)", color: "white", padding: "16px 36px", fontSize: "14px", fontWeight: 600, textDecoration: "none", borderRadius: "4px", border: "1.5px solid rgba(255,255,255,0.3)", display: "inline-flex", alignItems: "center", gap: "10px" }}>
-              <Phone size={15} /> +221 77 386 53 45
-            </a>
+      {/* ── RESERVATION FORM ── */}
+      <section style={{ padding: "100px 40px", background: "white" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }} className="booking-grid">
+
+          {/* Left: info */}
+          <div>
+            <span style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--coral)", marginBottom: "16px", display: "block" }}>Réservation directe</span>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 700, lineHeight: 1.05, marginBottom: "24px" }}>
+              Réservez en<br /><em style={{ fontStyle: "italic", color: "var(--coral)" }}>quelques clics</em>
+            </h2>
+            <p style={{ fontSize: "15px", color: "var(--muted)", lineHeight: 1.8, marginBottom: "40px" }}>
+              Remplissez le formulaire et votre demande est transmise directement à notre équipe sur WhatsApp. Pas de prépaiement — paiement sur place uniquement.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {[
+                { icon: "✓", text: "Réponse sous 2 heures" },
+                { icon: "✓", text: "Paiement sur place uniquement" },
+                { icon: "✓", text: "Annulation gratuite 24h avant" },
+                { icon: "✓", text: "Ouvert 7j/7 — 9h à 19h" },
+              ].map(item => (
+                <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <Check size={16} color="var(--forest-mid)" />
+                  <span style={{ fontSize: "15px", color: "#374151" }}>{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Direct WhatsApp */}
+            <div style={{ marginTop: "48px", padding: "24px", background: "var(--sand)", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <div style={{ fontSize: "13px", fontWeight: 600, color: "var(--ink)", marginBottom: "8px" }}>Préférez appeler directement ?</div>
+              <a href="tel:+221773865345" style={{ fontSize: "18px", fontWeight: 700, color: "var(--forest)", textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
+                <Phone size={18} /> +221 77 386 53 45
+              </a>
+            </div>
           </div>
-          <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", marginTop: "32px", letterSpacing: "0.04em" }}>
-            Paiement sur place · Annulation gratuite 24h à l&apos;avance · Pas de prépaiement
-          </p>
+
+          {/* Right: form */}
+          <div style={{ background: "var(--sand)", borderRadius: "12px", padding: "40px", border: "1px solid rgba(0,0,0,0.06)" }}>
+            <ReservationForm />
+          </div>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .booking-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   );
 }

@@ -35,7 +35,7 @@ const packs = [
 
 const avis = [
   { nom: "Xarala You Bess Yii", note: 5, texte: "Vous êtes les meilleurs au Lac Rose. Je vous le conseille vraiment !" },
-  { nom: "Abdourahmane DIAGNE", note: 5, texte: "Très sympa, site à visiter. You Art 👍🔥 Cuisine : 5 étoiles absolument." },
+  { nom: "Abdourahmane DIAGNE", note: 5, texte: "Très sympa, site à visiter. You Art — Cuisine : 5 étoiles absolument." },
   { nom: "Fatimata Thiam", note: 5, texte: "Un endroit cool, à visiter absolument. Service impeccable, cadre magnifique." },
 ];
 
@@ -196,6 +196,7 @@ export default function HomePage() {
             <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer" className="btn-ghost-white" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
               <Phone size={14} /> WhatsApp
             </a>
+
           </div>
         </div>
       </section>

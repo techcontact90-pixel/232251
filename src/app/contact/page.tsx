@@ -70,7 +70,7 @@ export default function ContactPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer"
                 style={{ background: "#25D366", color: "white", padding: "16px 24px", fontSize: "14px", fontWeight: 600, textDecoration: "none", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
-                📱 Réserver via WhatsApp
+                Réserver via WhatsApp
               </a>
               <a href="tel:+221773865345"
                 className="btn-forest"
@@ -94,7 +94,7 @@ export default function ContactPage() {
                 title="You Art Lac Rose - Localisation Google Maps"
               />
             </div>
-            <p style={{ fontSize: "13px", color: "var(--muted)", textAlign: "center" }}>📍 Lac Rose (Lac Retba), Sénégal · 35 km nord de Dakar</p>
+            <p style={{ fontSize: "13px", color: "var(--muted)", textAlign: "center" }}>Lac Rose (Lac Retba), Sénégal · 35 km nord de Dakar</p>
           </div>
         </div>
       </section>

@@ -96,7 +96,7 @@ export default function Navigation() {
             display: "flex", alignItems: "center", gap: "8px", marginTop: "20px", background: "#25D366", color: "white",
             padding: "14px 20px", borderRadius: "4px", fontSize: "14px", fontWeight: 600, textDecoration: "none",
           }}>
-            📱 WhatsApp — Réserver
+            WhatsApp — Réserver
           </a>
           <a href="tel:+221773865345" style={{
             display: "flex", alignItems: "center", gap: "8px", marginTop: "10px", background: "var(--coral)", color: "white",

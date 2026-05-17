@@ -145,7 +145,7 @@ export default function ActivitesPage() {
         </p>
         <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/reservation" className="btn-ghost-white">Voir les packs & tarifs</Link>
-          <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer" className="btn-ghost-white">📱 WhatsApp</a>
+          <a href="https://wa.me/221773865345" target="_blank" rel="noopener noreferrer" className="btn-ghost-white">WhatsApp</a>
         </div>
       </section>
 

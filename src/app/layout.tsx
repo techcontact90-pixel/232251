@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/youart/Navigation";
 import Footer from "@/components/youart/Footer";
+import ChatBot from "@/components/youart/ChatBot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://youartsquads.netlify.app"),
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );
