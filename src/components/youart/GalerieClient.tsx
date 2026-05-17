@@ -4,48 +4,48 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 
 const CATEGORIES = [
-  { key: "quad",     label: "Quad",     subtitle: "Adrénaline & dunes",     cover: "/images/quad/quad-2.jpg" },
-  { key: "pirogue",  label: "Pirogue",  subtitle: "Eaux roses mythiques",    cover: "/images/pirogue/pirogue-1.jpg" },
-  { key: "cheval",   label: "Cheval",   subtitle: "Galop sur la plage",      cover: "/images/cheval/cheval-1.jpg" },
-  { key: "ambiance", label: "Ambiance", subtitle: "L'âme du Lac Rose",       cover: "/images/ambiance/site-2.jpg" },
+  { key: "quad",     label: "Quad",     subtitle: "Adrénaline & dunes",     cover: "/images/quad/quad-2.jpg",        coverPos: "center 35%" },
+  { key: "pirogue",  label: "Pirogue",  subtitle: "Eaux roses mythiques",    cover: "/images/pirogue/pirogue-1.jpg",  coverPos: "center 45%" },
+  { key: "cheval",   label: "Cheval",   subtitle: "Galop sur la plage",      cover: "/images/cheval/cheval-1.jpg",   coverPos: "center 20%" },
+  { key: "ambiance", label: "Ambiance", subtitle: "L'âme du Lac Rose",       cover: "/images/ambiance/site-2.jpg",   coverPos: "center 40%" },
 ];
 
-const PHOTOS: Record<string, { src: string; alt: string }[]> = {
+const PHOTOS: Record<string, { src: string; alt: string; pos?: string }[]> = {
   quad: [
-    { src: "/images/quad/quad-1.jpg", alt: "Quad Lac Rose" },
-    { src: "/images/quad/quad-2.jpg", alt: "Quad sur les dunes" },
-    { src: "/images/quad/quad-3.jpg", alt: "Quad adrénaline" },
-    { src: "/images/quad/quad-4.jpg", alt: "Quad dunes dorées" },
-    { src: "/images/quad/quad-5.jpg", alt: "Quad plage" },
-    { src: "/images/quad/quad-6.jpg", alt: "Quad liberté" },
-    { src: "/images/quad/quad-7.jpg", alt: "Quad coucher de soleil" },
-    { src: "/images/quad/quad-8.jpg", alt: "Quad aventure" },
+    { src: "/images/quad/quad-1.jpg", alt: "Quad Lac Rose", pos: "center 40%" },
+    { src: "/images/quad/quad-2.jpg", alt: "Quad sur les dunes", pos: "center 35%" },
+    { src: "/images/quad/quad-3.jpg", alt: "Quad adrénaline", pos: "center 30%" },
+    { src: "/images/quad/quad-4.jpg", alt: "Quad dunes dorées", pos: "center 40%" },
+    { src: "/images/quad/quad-5.jpg", alt: "Quad plage", pos: "center 35%" },
+    { src: "/images/quad/quad-6.jpg", alt: "Quad liberté", pos: "center 40%" },
+    { src: "/images/quad/quad-7.jpg", alt: "Quad coucher de soleil", pos: "center 45%" },
+    { src: "/images/quad/quad-8.jpg", alt: "Quad aventure", pos: "center 35%" },
   ],
   pirogue: [
-    { src: "/images/pirogue/pirogue-1.jpg", alt: "Pirogue Lac Rose" },
-    { src: "/images/pirogue/pirogue-2.jpg", alt: "Pirogue colorée" },
-    { src: "/images/pirogue/pirogue-3.jpg", alt: "Pirogue eaux roses" },
-    { src: "/images/pirogue/pirogue-4.jpg", alt: "Pirogue coucher de soleil" },
-    { src: "/images/pirogue/pirogue-5.jpg", alt: "Pirogue Sénégal" },
-    { src: "/images/pirogue/pirogue-6.jpg", alt: "Pirogue lac retba" },
-    { src: "/images/pirogue/pirogue-7.jpg", alt: "Pirogue panoramique" },
-    { src: "/images/pirogue/pirogue-8.jpg", alt: "Pirogue aventure" },
+    { src: "/images/pirogue/pirogue-1.jpg", alt: "Pirogue Lac Rose", pos: "center 45%" },
+    { src: "/images/pirogue/pirogue-2.jpg", alt: "Pirogue colorée", pos: "center 50%" },
+    { src: "/images/pirogue/pirogue-3.jpg", alt: "Pirogue eaux roses", pos: "center 40%" },
+    { src: "/images/pirogue/pirogue-4.jpg", alt: "Pirogue coucher de soleil", pos: "center 45%" },
+    { src: "/images/pirogue/pirogue-5.jpg", alt: "Pirogue Sénégal", pos: "center 40%" },
+    { src: "/images/pirogue/pirogue-6.jpg", alt: "Pirogue lac retba", pos: "center 50%" },
+    { src: "/images/pirogue/pirogue-7.jpg", alt: "Pirogue panoramique", pos: "center 45%" },
+    { src: "/images/pirogue/pirogue-8.jpg", alt: "Pirogue aventure", pos: "center 40%" },
   ],
   cheval: [
-    { src: "/images/cheval/cheval-1.jpg", alt: "Cheval coucher de soleil" },
-    { src: "/images/cheval/cheval-2.jpg", alt: "Cheval sur la plage" },
-    { src: "/images/cheval/cheval-3.jpg", alt: "Balade à cheval" },
-    { src: "/images/cheval/cheval-4.jpg", alt: "Cheval liberté" },
-    { src: "/images/cheval/jeux-1.jpg", alt: "Jeux chevaux" },
+    { src: "/images/cheval/cheval-1.jpg", alt: "Cheval coucher de soleil", pos: "center 25%" },
+    { src: "/images/cheval/cheval-2.jpg", alt: "Cheval sur la plage", pos: "center 20%" },
+    { src: "/images/cheval/cheval-3.jpg", alt: "Balade à cheval", pos: "center 25%" },
+    { src: "/images/cheval/cheval-4.jpg", alt: "Cheval liberté", pos: "center 20%" },
+    { src: "/images/cheval/jeux-1.jpg", alt: "Jeux chevaux", pos: "center 30%" },
   ],
   ambiance: [
-    { src: "/images/ambiance/banner.jpg", alt: "Lac Rose panoramique" },
-    { src: "/images/ambiance/banner-2.jpg", alt: "Lac Rose vue" },
-    { src: "/images/ambiance/site-1.jpg", alt: "Site Lac Rose" },
-    { src: "/images/ambiance/site-2.jpg", alt: "Ambiance Lac Rose" },
-    { src: "/images/ambiance/site-3.jpg", alt: "Paysage Lac Rose" },
-    { src: "/images/ambiance/site-4.jpg", alt: "Lac Rose nature" },
-    { src: "/images/ambiance/site-5.jpg", alt: "Lac Rose coucher" },
+    { src: "/images/ambiance/banner.jpg", alt: "Lac Rose panoramique", pos: "center 40%" },
+    { src: "/images/ambiance/banner-2.jpg", alt: "Lac Rose vue", pos: "center 35%" },
+    { src: "/images/ambiance/site-1.jpg", alt: "Site Lac Rose", pos: "center 40%" },
+    { src: "/images/ambiance/site-2.jpg", alt: "Ambiance Lac Rose", pos: "center 45%" },
+    { src: "/images/ambiance/site-3.jpg", alt: "Paysage Lac Rose", pos: "center 40%" },
+    { src: "/images/ambiance/site-4.jpg", alt: "Lac Rose nature", pos: "center 45%" },
+    { src: "/images/ambiance/site-5.jpg", alt: "Lac Rose coucher", pos: "center 40%" },
   ],
 };
 
@@ -76,8 +76,8 @@ export default function GalerieClient() {
           {CATEGORIES.map(cat => (
             <button key={cat.key} onClick={() => selectCat(cat.key)}
               className="cat-card"
-              style={{ position: "relative", height: "220px", border: activeCat === cat.key ? "3px solid var(--coral)" : "3px solid transparent", borderRadius: "8px", overflow: "hidden", cursor: "pointer", padding: 0, background: "none", transition: "transform 0.3s, border-color 0.3s", outline: "none" }}>
-              <Image src={cat.cover} alt={cat.label} fill style={{ objectFit: "cover", transition: "transform 0.5s ease" }} sizes="(max-width: 768px) 50vw, 25vw" />
+              style={{ position: "relative", height: "260px", border: activeCat === cat.key ? "3px solid var(--coral)" : "3px solid transparent", borderRadius: "8px", overflow: "hidden", cursor: "pointer", padding: 0, background: "none", transition: "transform 0.3s, border-color 0.3s", outline: "none" }}>
+              <Image src={cat.cover} alt={cat.label} fill style={{ objectFit: "cover", objectPosition: cat.coverPos, transition: "transform 0.5s ease" }} sizes="(max-width: 768px) 50vw, 25vw" />
               <div style={{ position: "absolute", inset: 0, background: activeCat === cat.key ? "rgba(232,99,122,0.35)" : "rgba(14,61,36,0.5)", transition: "background 0.3s" }} />
               <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "16px" }}>
                 <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(18px,3vw,26px)", fontWeight: 700, color: "white", marginBottom: "6px" }}>{cat.label}</div>
@@ -112,9 +112,9 @@ export default function GalerieClient() {
 
           {/* Main slide */}
           <div style={{ position: "relative", maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-            <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: "8px", overflow: "hidden", cursor: "zoom-in" }}
+            <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "8px", overflow: "hidden", cursor: "zoom-in" }}
               onClick={() => setLightbox(photos[slideIdx])}>
-              <Image src={photos[slideIdx].src} alt={photos[slideIdx].alt} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 1100px" priority />
+              <Image src={photos[slideIdx].src} alt={photos[slideIdx].alt} fill style={{ objectFit: "cover", objectPosition: photos[slideIdx].pos ?? "center 35%" }} sizes="(max-width: 768px) 100vw, 1100px" priority />
               <div style={{ position: "absolute", inset: 0, background: "transparent", display: "flex", alignItems: "center", justifyContent: "center", opacity: 0, transition: "opacity 0.3s" }} className="slide-zoom-hint">
                 <div style={{ background: "rgba(0,0,0,0.5)", borderRadius: "50%", width: "56px", height: "56px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <ZoomIn size={24} color="white" />
@@ -142,7 +142,7 @@ export default function GalerieClient() {
             {photos.map((p, i) => (
               <button key={i} onClick={() => setSlideIdx(i)}
                 style={{ position: "relative", width: "80px", height: "56px", borderRadius: "4px", overflow: "hidden", flexShrink: 0, border: i === slideIdx ? "2px solid var(--coral)" : "2px solid transparent", cursor: "pointer", padding: 0, opacity: i === slideIdx ? 1 : 0.55, transition: "opacity 0.2s, border-color 0.2s" }}>
-                <Image src={p.src} alt={p.alt} fill style={{ objectFit: "cover" }} sizes="80px" />
+                <Image src={p.src} alt={p.alt} fill style={{ objectFit: "cover", objectPosition: p.pos ?? "center 35%" }} sizes="80px" />
               </button>
             ))}
           </div>
@@ -177,7 +177,7 @@ export default function GalerieClient() {
         .slide-zoom-hint:hover { opacity: 1 !important; }
         @media (max-width: 768px) {
           .cat-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
-          .cat-card { height: 160px !important; }
+          .cat-card { height: 190px !important; }
           .dots-mobile { display: flex !important; }
         }
         @media (min-width: 769px) {
