@@ -1,76 +1,146 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="You Art Lac Rose">
+  <defs>
+    <radialGradient id="sailG" cx="40%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#FFE84D"/>
+      <stop offset="100%" stop-color="#D4A800"/>
+    </radialGradient>
+    <radialGradient id="camelG" cx="30%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </radialGradient>
+    <radialGradient id="pirogueG" cx="40%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#F06292"/>
+      <stop offset="100%" stop-color="#AD1457"/>
+    </radialGradient>
+    <radialGradient id="quadG" cx="28%" cy="25%" r="72%">
+      <stop offset="0%" stop-color="#FF5252"/>
+      <stop offset="100%" stop-color="#B71C1C"/>
+    </radialGradient>
+    <radialGradient id="wheelG" cx="32%" cy="28%" r="68%">
+      <stop offset="0%" stop-color="#FFE040"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </radialGradient>
+  </defs>
 
-  <!-- White circle -->
+  <!-- White circle background -->
   <circle cx="200" cy="200" r="196" fill="white"/>
 
-  <!-- ── PIROGUE (pink-red curved boat, bottom of icon) ── -->
-  <path d="M 55 228 Q 100 252 200 258 Q 300 258 355 228 L 348 240 Q 290 268 200 270 Q 110 268 52 240 Z" fill="#D42B3A"/>
+  <!-- ── YELLOW SAIL (behind other elements) ── -->
+  <polygon points="168,52 116,246 220,246" fill="url(#sailG)"/>
 
-  <!-- ── YELLOW SAIL (tall triangle, center) ── -->
-  <polygon points="198,52 148,235 248,235" fill="#F5C200"/>
+  <!-- ── PIROGUE – sickle/crescent, right tip curls sharply up ── -->
+  <path d="
+    M 52 282
+    C 140 358, 308 352, 388 210
+    C 375 196, 255 262, 58 268 Z
+  " fill="url(#pirogueG)"/>
 
-  <!-- ── GREEN CAMEL (left, facing left) ── -->
-  <!-- Neck -->
-  <path d="M 100 232 C 90 210 80 185 85 158 C 88 143 96 135 106 140 C 116 145 114 162 110 180 C 106 198 108 218 112 232 Z" fill="#2E7D32"/>
-  <!-- Head (oval, rotated slightly) -->
-  <ellipse cx="86" cy="148" rx="30" ry="23" fill="#2E7D32" transform="rotate(-10 86 148)"/>
+  <!-- ── CAMEL – neck + stylised head facing left ── -->
+  <!-- Neck pillar -->
+  <path d="
+    M 84 264
+    C 76 238, 74 206, 84 176
+    C 90 156, 104 146, 116 150
+    C 128 154, 130 170, 126 192
+    C 122 214, 118 242, 118 264 Z
+  " fill="url(#camelG)"/>
+
+  <!-- Head: rounded skull, beak/snout pointing left -->
+  <path d="
+    M 116 152
+    C 110 132, 94 118, 70 120
+    C 48 122, 30 138, 24 155
+    C 18 172, 26 186, 44 186
+    C 60 186, 76 176, 90 166
+    C 102 158, 112 152, 116 152 Z
+  " fill="#2E7D32"/>
+
   <!-- Snout extension -->
-  <path d="M 58 155 Q 44 162 46 172 Q 48 182 62 180 Q 76 178 82 165 Z" fill="#388E3C"/>
-  <!-- Nostril bump -->
-  <ellipse cx="47" cy="172" rx="7" ry="5" fill="#2E7D32"/>
-  <!-- Lips crease -->
-  <path d="M 48 170 Q 56 174 64 170" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="
+    M 24 155
+    C 10 160, 4 172, 8 182
+    C 12 192, 28 194, 42 188
+    C 52 184, 54 174, 48 166
+    C 42 158, 32 155, 24 155 Z
+  " fill="#388E3C"/>
+
   <!-- Eye -->
-  <circle cx="78" cy="139" r="5.5" fill="white"/>
-  <circle cx="77" cy="139" r="3" fill="#111111"/>
-  <circle cx="76" cy="138" r="1" fill="white"/>
+  <circle cx="66" cy="132" r="7" fill="white"/>
+  <circle cx="65" cy="132" r="4.5" fill="#111"/>
+  <circle cx="64" cy="131" r="1.8" fill="white"/>
+
   <!-- Ear -->
-  <ellipse cx="108" cy="126" rx="7" ry="10" fill="#388E3C" transform="rotate(-20 108 126)"/>
-  <!-- Hump suggestion on neck -->
-  <ellipse cx="114" cy="170" rx="13" ry="9" fill="#2E7D32"/>
+  <ellipse cx="106" cy="118" rx="9" ry="13" fill="#388E3C" transform="rotate(-18 106 118)"/>
+  <ellipse cx="106" cy="119" rx="5" ry="8" fill="#2E7D32" transform="rotate(-18 106 119)"/>
 
-  <!-- ── RED QUAD (right side) ── -->
-  <!-- Rear wheel (large, behind body) -->
-  <circle cx="248" cy="228" r="22" fill="#1A1A1A"/>
-  <circle cx="248" cy="228" r="14" fill="#F5C200"/>
-  <circle cx="248" cy="228" r="6" fill="#1A1A1A"/>
-  <line x1="248" y1="214" x2="248" y2="242" stroke="#1A1A1A" stroke-width="2"/>
-  <line x1="234" y1="228" x2="262" y2="228" stroke="#1A1A1A" stroke-width="2"/>
+  <!-- Hump on neck -->
+  <ellipse cx="122" cy="178" rx="15" ry="10" fill="#388E3C"/>
 
-  <!-- Main body -->
-  <rect x="242" y="158" width="88" height="56" rx="8" fill="#D32F2F"/>
+  <!-- ── RED QUAD – smooth rounded body ── -->
+  <!-- Main body blob -->
+  <path d="
+    M 244 258
+    C 244 232, 256 210, 278 204
+    C 290 200, 308 200, 322 198
+    C 322 184, 334 172, 352 172
+    C 370 172, 382 186, 384 204
+    C 394 214, 398 234, 394 254
+    C 392 268, 380 274, 366 274
+    L 256 274
+    C 248 274, 244 267, 244 258 Z
+  " fill="url(#quadG)"/>
+
+  <!-- Seat hump -->
+  <path d="
+    M 274 204
+    C 274 190, 284 178, 300 177
+    C 316 176, 328 188, 328 200
+    L 276 202 Z
+  " fill="#EF5350"/>
+
+  <!-- Body highlight streak -->
+  <path d="M 258 228 C 290 218, 348 216, 378 228" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.65"/>
+
   <!-- Front fairing -->
-  <rect x="312" y="164" width="30" height="44" rx="6" fill="#B71C1C"/>
-  <!-- Seat / top -->
-  <rect x="250" y="144" width="70" height="20" rx="5" fill="#C62828"/>
-  <!-- Fender -->
-  <path d="M 240 158 Q 248 148 260 152 L 256 162 Z" fill="#B71C1C"/>
+  <path d="
+    M 378 206
+    C 396 218, 400 240, 396 258
+    C 394 270, 382 276, 368 274
+    L 374 258
+    C 382 258, 388 250, 388 240
+    C 388 228, 384 214, 378 206 Z
+  " fill="#C62828"/>
 
-  <!-- Handlebars -->
-  <path d="M 310 154 Q 314 136 320 126" stroke="#7B0000" stroke-width="8" stroke-linecap="round" fill="none"/>
-  <path d="M 316 128 L 330 124 M 316 128 L 306 124" stroke="#7B0000" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Handlebars (arched ∩) -->
+  <path d="M 262 200 C 262 178, 270 166, 286 164 C 302 162, 312 172, 316 186" stroke="#7B0000" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <circle cx="262" cy="200" r="5" fill="#7B0000"/>
+  <circle cx="316" cy="186" r="5" fill="#7B0000"/>
+
+  <!-- Rear wheel -->
+  <circle cx="284" cy="274" r="34" fill="#1A1A1A"/>
+  <circle cx="284" cy="274" r="24" fill="url(#wheelG)"/>
+  <circle cx="284" cy="274" r="11" fill="#1A1A1A"/>
+  <circle cx="284" cy="274" r="5" fill="#777"/>
 
   <!-- Front wheel -->
-  <circle cx="328" cy="222" r="20" fill="#1A1A1A"/>
-  <circle cx="328" cy="222" r="13" fill="#F5C200"/>
-  <circle cx="328" cy="222" r="5" fill="#1A1A1A"/>
-  <line x1="328" y1="209" x2="328" y2="235" stroke="#1A1A1A" stroke-width="2"/>
-  <line x1="315" y1="222" x2="341" y2="222" stroke="#1A1A1A" stroke-width="2"/>
+  <circle cx="362" cy="272" r="32" fill="#1A1A1A"/>
+  <circle cx="362" cy="272" r="22" fill="url(#wheelG)"/>
+  <circle cx="362" cy="272" r="10" fill="#1A1A1A"/>
+  <circle cx="362" cy="272" r="4.5" fill="#777"/>
 
   <!-- ── TEXT ── -->
-  <text x="200" y="316"
+  <text x="200" y="328"
     text-anchor="middle"
     font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
-    font-size="60"
+    font-size="72"
     font-weight="900"
     fill="#111111"
-    letter-spacing="2">YOU ART</text>
-  <text x="200" y="360"
+    letter-spacing="-1">YOU ART</text>
+  <text x="200" y="372"
     text-anchor="middle"
     font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
-    font-size="34"
+    font-size="36"
     font-weight="900"
     fill="#111111"
-    letter-spacing="9">LAC ROSE</text>
-
+    letter-spacing="10">LAC ROSE</text>
 </svg>
